@@ -1,0 +1,16 @@
+section#payment {
+  #expiration-group {
+    label {
+      @extend .d-block;
+    }
+
+    input,
+    span {
+      float: left;
+    }
+  }
+
+  .clear {
+    clear: left;
+  }
+}

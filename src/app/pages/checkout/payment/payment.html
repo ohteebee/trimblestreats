@@ -1,0 +1,55 @@
+<section id="payment">
+  <article class="wrapper">
+    <h1>PAYMENT</h1>
+    <!--  action="/your-charge-code" -->
+    <!-- <p>
+      Your subtotal is <strong>${{price}}</strong>
+    </p>
+    <p>
+      Total after shipping <strong>${{}}</strong>
+    </p> -->
+    <form action="" method="POST" id="payment-form" (submit)="getToken()">
+      <span class="payment-message"></span>
+
+      <div class="form-group">
+        <label for="cardNumber">
+          Card Number
+        </label>
+
+        <input class="col-sm-6 col-xl-3 form-control" [value]="cardNumber" (input)="cardNumber=$event.target.value" placeholder="your card number" name="cardNumber" type="text" size="20" data-stripe="number">
+      </div>
+
+      <div id="expiration-group" class="form-group">
+        <label for="expiryMonth">
+          Expiration (MM/YY)
+        </label>
+        <input class="form-control small" [value]="expiryMonth" (input)="expiryMonth=$event.target.value" placeholder="mm" name="expiryMonth" type="text" size="2" data-stripe="exp_month">
+        <span class="d-inline padding">
+          &nbsp;/&nbsp;
+        </span>
+        <input class="form-control small" [value]="expiryYear" (input)="expiryYear=$event.target.value" placeholder="yy" name="expiryYear" type="text" size="2" data-stripe="exp_year">
+      </div>
+
+      <div class="form-group clear">
+        <label class="m-t-1" for="cvc">CVC</label>
+        <input class="medium form-control" [value]="cvc" (input)="cvc=$event.target.value" placeholder="cvc #" name="cvc" type="text" size="4" data-stripe="cvc">
+      </div>
+      <p class="text-warning" *ngIf="processing">
+        {{message}}
+      </p>
+      <p class="text-danger" *ngIf="errorMessage && errorMessage.length">
+        {{errorMessage}}
+      </p>
+      <button class="btn pull-xs-right" type="submit" [disabled]="processing">
+        Submit Payment ${{price}}
+      </button>
+    </form>
+  </article>
+  <aside class="modal toast" role="dialog" *ngIf="showSuccess">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content p-a-2 bg-inverse text-light">
+        {{message}}
+      </div>
+    </div>
+  </aside>
+</section>

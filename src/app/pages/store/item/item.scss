@@ -1,0 +1,25 @@
+section#item {
+  article.wrapper {
+    img {
+      width: 50%;
+      height: auto;
+    }
+
+    .option {
+      // position: absolute;
+      // left: 0;
+      // text-decoration: none;
+      // // border: 1px solid $accent;
+      // padding: $gap;
+    }
+    label:hover {
+      color: $light !important;
+    }
+    input#quantityInput {
+      // width: 60px !important;
+      padding-left: $some;
+      padding-right: $some;
+      text-align: center;
+    }
+  }
+}

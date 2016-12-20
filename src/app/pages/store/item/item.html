@@ -1,0 +1,39 @@
+<section id="item">
+  <article class="wrapper">
+    <h1>{{item.type}}</h1>
+    <div class="row">
+      <div class="col col-sm-3">
+        <img class="w-100" src="{{'../assets/' + item.data.image}}"/>
+      </div>
+      <div class="col col-sm-6">
+        <p>{{item.data.description}}</p>
+        <p>
+          <strong>${{item.data.price}}
+            per
+            {{item.serving}}</strong>
+        </p>
+        <div class="form-group row">
+          <label class="col-xs-3 col-form-label" for="quantityInput">Quantity</label>
+          <div class="col col-xs-6">
+            <input type="number" class="form-control text-warning" id="quantityInput" placeholder="how many" [value]="quantity" (input)="quantity=$event.target.value">
+          </div>
+        </div>
+        <div class="row">
+          <label class="col col-xs-3">Flavors</label>
+          <div class="col col-xs-6">
+            <div name="options" class="btn-group" data-toggle="buttons">
+              <div class="option" *ngFor="let option of item.options; let i = index" (click)="applyOption(option)">
+                <label class="btn btn-outline-success">
+                  <input type="radio" [checked]="i==0" name="options" autocomplete="off">
+                  {{option.name}}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" style="" class="m-t-2 btn pull-xs-right" (click)="addToCart(item)">Add to cart</button>
+      </div>
+    </div>
+  </article>
+  <toast [toast]="toast"></toast>
+</section>

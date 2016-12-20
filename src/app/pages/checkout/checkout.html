@@ -1,0 +1,59 @@
+<section id="checkout">
+  <article class="wrapper">
+    <h1>Shopping Cart</h1>
+    <div class="row m-y-1" *ngFor="let item of items; let l = last" [ngClass]="{'bottom-success p-b-1': !l}">
+      <span class="col col-sm-3 hidden-sm-down text-warning"><img class="m-y-2" width="100%" height="auto" src="{{'assets/' + item.image}}"/></span>
+      <span class="col col-sm-3 v-center">
+        <p class="center p-x-1">
+          {{item.name}}
+          {{item.type}}</p>
+      </span>
+      <span class="col col-sm-2 v-center">
+        <p class="center">{{item.quantity}}
+          {{item.serving}}</p>
+      </span>
+      <span class="col col-sm-2 v-center">${{getPrice(item)}}</span>
+      <span class="col col-xs-3 col-sm-2 v-center">
+        <button type="button" class="btn btn-sm" (click)="update(item)">update</button><br/>
+        <button type="button" class="btn btn-block btn-sm" (click)="remove(item)">remove</button>
+      </span>
+    </div>
+    <div class="row">
+      <span class="col-xs-4 col-md-3 col-lg-2 offset-xs-8">
+        Subtotal
+        <strong class="text-success">{{getSubtotal()}}</strong>
+      </span>
+    </div>
+    <div class="row m-b-3">
+      <span class="col-xs-4 col-md-3 col-lg-2 offset-xs-8">
+        Total after shipping
+        <strong class="text-success">{{getTotal()}}</strong>
+      </span>
+    </div>
+    <div class="pull-xs-right">
+      <button type="button" class="btn" (click)="emptyCart()">Empty cart</button>
+      <a class="btn" (click)="goToPayment()" routerLink="/shipping" *ngIf="items.length > 0">Next</a>
+    </div>
+  </article>
+
+  <aside id="update-qty" class="modal m-t-3" role="dialog" [hidden]="!showUpdate">
+    <div class="modal-dialog modal-md m-t-3">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close light" (click)="closeUpdate()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">Update the quantity</h4>
+        </div>
+        <div class="modal-body p-a-2">
+          <div class="form-group">
+            <label for="quantityInput">Quantity</label>
+            <input type="number" class="form-control" id="quantityInput" placeholder="1" [value]="updateItem.quantity" (input)="updateItem.quantity=$event.target.value" required>
+          </div>
+          <button type="button" class="btn" (click)="saveUpdate(updateItem)">Save</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <toast [toast]="toast"></toast>
+</section>

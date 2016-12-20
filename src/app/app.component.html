@@ -1,0 +1,63 @@
+<div id="app">
+  <header class="brand">
+    <h1>Trimble's Treats</h1>
+    <h5 class="m-b-0">{{"{ Where Every Treat Means A Little More }"}}</h5>
+    <nav class="navbar m-t-0">
+      <ul class="nav nav-inline">
+        <li class="nav-item" *ngFor="let page of pages">
+          <a class="m-b-1" href="#" [ngClass]="{'link-active': router.url == '/'+page}" routerLink="{{'/'+page}}" routerLinkActive="active">{{capitalize(page)}}</a>
+        </li>
+      </ul>
+
+    </nav>
+    <a id="btn-checkout" class="btn" href="#" *ngIf="getNumItems() > 0" routerLink="/checkout">Cart
+      <span class="badge">{{''+getNumItems()+''}}</span>
+    </a>
+  </header>
+
+  <router-outlet></router-outlet>
+
+  <footer class="shoes p-x-1 above">
+    <div class="row">
+      <div class="col col-md-4">
+        <h4>{{"{ Contact }"}}
+        </h4>
+        <p class="text-justify p-l-2">(864)-810-1602
+          <br>
+          <a class="text-light" href="mailto:trimblestreats@gmail.com">trimblestreats@gmail.com</a>
+          <br>
+          Spartanburg, SC
+          <br></p>
+      </div>
+
+      <div class="col col-md-4">
+        <h4>{{"{ CUSTOMER SERVICE }"}}</h4>
+        <p class="text-justify p-l-2">
+          <a href="#" class="text-light" routerLink="/contact" routerLinkActive="active">Contact</a>
+          <br>
+          <a href="#" class="text-light" routerLink="/shipping-info" routerLinkActive="active">Shipping</a>
+          <br>
+          <a href="#" class="text-light" routerLink="/faqs" routerLinkActive="active">FAQs</a>
+        </p>
+      </div>
+      <div class="col col-md-4">
+        <h4>{{"{ CUSTOM ORDERS }"}}</h4>
+        <p class="text-justify p-l-2">
+          <a class="text-light" routerLink="/order-requests" routerLinkActive="active">Order Requests</a>
+          <br><br><br>
+        </p>
+      </div>
+    </div>
+    <div class="row social">
+      <span class="center">
+        <a id="instagram" class="" href="http://www.instagram.com/trimblestreats/"></a>
+        <a id="facebook" class="" href="http://www.facebook.com/trimblestreats"></a>
+      </span>
+    </div>
+    <p class="otb">
+      <small class="octicon octicon-tools"></small>
+      with care.
+      <a href="http://otb.zone" target="_blank" class="text-info">otb</a>
+    </p>
+  </footer>
+</div>

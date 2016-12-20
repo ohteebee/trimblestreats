@@ -1,0 +1,17 @@
+<section id="store">
+    <article class="wrapper">
+        <h1 class="title center">Tasty
+            <span class="thin text-inverse">
+                Treats</span>
+        </h1>
+        <div class="row row-flex">
+            <div class="col col-md-4 p-a-1 m-y-2" *ngFor="let item of items | async; let i = index">
+                <div class="card" (click)="openItem(item)" style="cursor: hand !important">
+                    <h2 [class]="'over-center p-a-1 text-' +  getColor(i)">{{item.type}}</h2>
+                    <div class="card-block clickable" [ngStyle]="{'background-image': 'url(../../../assets/' + item.image + ')'}"></div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+</section>

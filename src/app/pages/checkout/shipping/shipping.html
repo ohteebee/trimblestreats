@@ -1,0 +1,40 @@
+<section id="shipping">
+  <article class="wrapper">
+    <h1>Shipping</h1>
+    <form name="shippingForm">
+      <div class="form-group">
+        <label for="nameInput"><span class="text-danger">*</span>Name</label>
+        <input type="text" class="form-control" id="nameInput" placeholder="your name" [value]="data.name" (input)="data.name=$event.target.value">
+      </div>
+      <div class="form-group">
+        <label for="emailInput"><span class="text-danger">*</span>Email</label>
+        <small class="text-success">
+          For shipping and confirmation email</small>
+        <input type="text" class="form-control" id="emailInput" placeholder="your email" [value]="data.email" (input)="data.email=$event.target.value">
+      </div>
+      <div class="form-group">
+        <label for="contactInput"><span class="text-danger">*</span>Address line 1</label>
+        <input type="text" class="form-control" id="contactInput" placeholder="your street address" [value]="data.address1" (input)="data.address1=$event.target.value">
+      </div>
+      <div class="form-group">
+        <label for="contactInput">Address line 2</label>
+        <input type="text" class="form-control" id="contactInput" placeholder="your apt number or miscellaneous" [value]="data.address2" (input)="data.address2=$event.target.value">
+      </div>
+      <div class="form-group">
+        <label for="contactInput"><span class="text-danger">*</span>City</label>
+        <input type="text" class="form-control" id="contactInput" placeholder="your city or town" [value]="data.city" (input)="data.city=$event.target.value">
+      </div>
+      <div class="form-group">
+        <label for="contactInput"><span class="text-danger">*</span>State</label>
+        <input type="text" class="form-control" id="contactInput" placeholder="your state" [value]="data.state" (input)="data.state=$event.target.value">
+      </div>
+      <div class="form-group">
+        <label for="contactInput"><span class="text-danger">*</span>ZIP Code</label>
+        <input type="number" class="form-control" id="contactInput" placeholder="your zip code" [value]="data.zip" (input)="data.zip=$event.target.value">
+      </div>
+      <small class="p-t-2 text-info" *ngIf="processing">Processing.........</small>
+      <button type="button" class="btn pull-xs-right p-a-1" (click)="saveShipping()">Next</button>
+    </form>
+  </article>
+  <toast [toast]="toast"></toast>
+</section>

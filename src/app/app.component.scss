@@ -1,0 +1,128 @@
+#app {
+  min-height: 100%;
+  position: relative;
+
+  header.brand {
+    background: transparent;
+    margin: 0 auto $space !important;
+    overflow: visible;
+    @extend .p-t-2;
+    width: 100%;
+    text-align: center;
+    padding: $gap;
+    @media screen and (max-width: $mobile-width) {
+      padding: $gap $some;
+    }
+
+    h5 {
+      font-family: 'Xiomara';
+      color: $positive;
+    }
+    li.nav-item {
+      font-family: 'Helvetica';
+
+      a {
+        @extend .m-x-3;
+        @media screen and (max-width: $mobile-width) {
+          margin-left: $space !important;
+          margin-right: $space !important;
+        }
+        color: $light;
+        vertical-align: middle;
+
+        &.nav-link {
+          letter-spacing: 1.5;
+          color: $dark;
+        }
+      }
+    }
+
+    em,
+    h1,
+    h2,
+    h3,
+    h4,
+    p{
+      color: $positive;
+      font-family: 'Uchiyama';
+    }
+
+    #btn-checkout {
+      position: fixed;
+      top: $gap;
+      right: 10px;
+      margin-right: $gap !important;
+      width: 100px;
+      z-index: $clouds;
+      // background-color: transparent;
+      @media screen and(max-width: 540px) {
+        top: 140px !important;
+      }
+
+      .badge {
+        // @extend .bg-danger;
+        padding-left: $some;
+        padding-right: $some;
+      }
+    }
+
+
+  }
+
+  footer.shoes {
+    max-width: 1200px;
+    @extend .center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0 !important;
+    @extend .p-y-3;
+    @extend .text-light;
+
+    .col {
+      @extend .m-y-2;
+    }
+
+    .col,
+    p {
+      @extend .center;
+      @extend .text-light;
+    }
+
+    h4 {
+      text-align: left;
+    }
+
+    .otb {
+      @extend .p-t-1;
+    }
+
+    .social {
+      @extend .m-y-2;
+      min-height: 100% !important;
+
+      h3 {
+        color: purple;
+      }
+      overflow: visible;
+
+      a {
+        float: left;
+        @extend .m-x-1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 80px;
+        height: 80px;
+
+        &#instagram {
+          background-image: url('assets/images/instagram.png');
+        }
+
+        &#facebook {
+          background-image: url('assets/images/facebook.png');
+        }
+      }
+    }
+  }
+}

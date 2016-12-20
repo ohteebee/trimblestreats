@@ -1,0 +1,13 @@
+@media screen and (max-width: $mobile-width) {
+  body {
+    section {
+      padding-bottom: $shoe-size-mobile !important;
+    }
+    h1 {
+      font-size: 1.7em;
+    }
+    h5 {
+      font-size: 1.1em;
+    }
+  }
+}

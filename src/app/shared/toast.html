@@ -1,0 +1,7 @@
+<aside class="modal toast" role="dialog" *ngIf="toast.show" [ngClass]="{'success': toast.success, 'danger': !toast.success}">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content p-a-2 bg-inverse text-light">
+      {{toast.message}}
+    </div>
+  </div>
+</aside>

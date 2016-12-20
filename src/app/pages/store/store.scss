@@ -1,0 +1,32 @@
+@import 'item/item';
+section#store {
+    .card {
+      background-color: white;
+      @extend .clickable;
+        .over-center {
+            // color: $gray-lightest;
+            background-color: rgba(#fff,.5);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 25%;
+            text-align: center;
+        }
+        @extend .bg-faded;
+        overflow: hidden !important;
+        margin: 0 !important;
+    }
+    .card-block {
+        background-size: contain;
+        width: 100%;
+        height: auto;
+        min-width: 300px;
+        overflow: hidden !important;
+        min-height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        @media screen and (min-width: $mobile-width) {
+            background-position: left;
+        }
+    }
+}

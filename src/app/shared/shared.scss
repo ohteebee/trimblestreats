@@ -1,0 +1,207 @@
+@font-face {
+  font-family: 'Penelope';
+  src: url('assets/fonts/penelope_anne/penelope.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Uchiyama';
+  src: url('assets/fonts/uchiyama/uchiyama.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Xiomara';
+  src: url('assets/fonts/xiomara/xiomara.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.bottom-accent {
+  border-bottom: 1px $accent solid;
+}
+
+.bottom-success {
+  border-bottom: 1px $positive solid;
+}
+
+*,
+body,
+html {
+  padding: 0;
+  margin: 0;
+  color: $light;
+}
+
+::-webkit-input-placeholder {
+  color: $brand-success;
+}
+
+:-moz-placeholder {
+  color: $brand-success;
+}
+
+::-moz-placeholder {
+  color: $brand-success;
+}
+
+:-ms-input-placeholder {
+  color: $brand-success;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+input {
+  padding-left: $some;
+  padding-right: $some;
+}
+
+body {
+  height: 100%;
+  border: 1px solid transparent;
+  background-color: $dark;
+  background-size: 80px 150px;
+
+  .loading {
+    @extend .center;
+    margin-top: 20% !important;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  h5 {
+    text-transform: lowercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Uchiyama';
+  }
+
+  a,
+  button,
+  input[type="submit"] {
+    &.btn {
+      @extend .btn-outline-warning;
+    }
+  }
+
+  .wrapper {
+    @extend .p-a-3;
+    @extend .m-b-1;
+    @extend .center;
+    max-width: 800px;
+    background-color: rgba($dark,.85);
+  }
+
+  section {
+    min-height: 100%;
+    margin-bottom: $gap !important;
+    position: relative;
+    padding-bottom: $shoe-size;
+    input:not([type="submit"]),
+    label,
+    textarea {
+      @extend .text-success;
+    }
+    article.wrapper {
+      text-align: left;
+      form {
+        text-align: left !important;
+      }
+    }
+  }
+
+  .center {
+    margin: auto;
+    text-align: center;
+    display: block;
+  }
+
+  .v-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .link-active {
+    color: $brand-success !important;
+  }
+
+  .thin {
+    font-weight: 200;
+  }
+
+  .border-warning {
+    border: 1px solid $brand-warning;
+  }
+
+  .border-success {
+    border: 1px solid $brand-success;
+  }
+
+  .text-light {
+    color: $light;
+  }
+
+  .bg-success {
+    background-color: $positive;
+  }
+
+  .bg-dark {
+    background-color: $dark;
+  }
+
+  .bg-light {
+    background-color: $light;
+  }
+
+  .clickable {
+    &:hover {
+      cursor: hand !important;
+    }
+    cursor: hand !important;
+    cursor: pointer !important;
+  }
+
+  .modal {
+    background-color: rgba(black, .6) !important;
+
+    &.toast {
+      &.danger {
+        .modal-dialog {
+          .modal-content {
+            border-color: $danger;
+          }
+        }
+      }
+
+      .modal-dialog {
+        margin-top: 20%;
+        .modal-content {
+          color: $light;
+          border: 2px solid $positive;
+          @extend .center;
+        }
+      }
+    }
+  }
+
+  .small {
+    padding: $space;
+    width: 50px;
+    text-align: center;
+  }
+
+  .medium {
+    padding: $space;
+    text-align: center;
+    width: 80px;
+  }
+}

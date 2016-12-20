@@ -1,0 +1,64 @@
+<section id="landing">
+  <article class="wrapper">
+    <p>
+      We believe in paying it forward and making the world a better and happier place, one tasty treat at a time. That is why we created a marketplace for quality, delectable chocolates at a fair price and continue to pay it forward with every purchase we receive.
+      We donate 5% of each and every sale directly to the Big Brothers Big Sisters Organiation, in order to support the important work being done by this organizaiton.
+    </p>
+  </article>
+  <article class="wrapper">
+
+
+    <h1>Join our mailing list!</h1>
+    <button type="button" class="btn btn-outline-success m-a-1" (click)="showModal()">Subscribe</button>
+    <!-- subscribe modal -->
+    <aside class="modal m-t-3" role="dialog" [hidden]="!showSubscribe">
+      <div class="modal-dialog modal-md m-t-3">
+        <div class="bg-dark modal-content">
+          <div class="border-success modal-header">
+            <button type="button" class="close" (click)="showSubscribe=false">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+            <h4 class="modal-title text-success">Join our mailing list</h4>
+          </div>
+          <div class="modal-body p-a-2">
+            <form class="p-b-3" name="subscribeForm">
+              <div class="form-group">
+                <label class="pull-xs-left text-success" for="emailInput">Email address</label>
+                <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="your email" [value]="email" required>
+                <small id="emailHelp" class="text-xs-left form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <button type="button" class="btn pull-xs-right" (click)="email.length && email.includes('@') && subscribe()">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="modal toast" role="dialog" *ngIf="showSuccess">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content p-a-2 bg-inverse text-light">
+          Thank you, your subscription has been added!
+        </div>
+      </div>
+    </aside>
+  </article>
+  <!-- <article class="wrapper">
+        <h1>Seasonal Favorites</h1>
+        <div class="row">
+
+            <div class="col col-xs-6">
+                <div class="card">
+                    <img src="../../../assets/images/small-gift.png" width="100%" height="auto"/>
+                </div>
+
+            </div>
+
+            <div class="col col-xs-6">
+                <div class="card">
+                    <img src="../../../assets/images/small-gift.png" width="100%"/>
+                </div>
+
+            </div>
+        </div>
+    </article> -->
+</section>

@@ -1,0 +1,32 @@
+section#landing {
+  margin: $gap 0 0;
+
+  article {
+    @extend .center;
+    @extend .m-y-2;
+    max-width: 600px;
+    @extend .p-x-3;
+    @extend .p-y-2;
+    text-align: center;
+    border: 1px $brand-success solid;
+    text-align: center;
+    figcaption,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,{
+      font-family: 'Penelope';
+    }
+    p, em, span, h5 {
+      color: $light;
+    }
+    input {
+      padding: $space;
+    }
+    img.rocket {
+      width: 40px;
+      height: auto;
+    }
+  }
+}

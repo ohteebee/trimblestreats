@@ -1,0 +1,28 @@
+<section id="contact">
+  <article class="wrapper">
+    <h1>
+        Questions?
+    </h1>
+    <div class="col col-md-6">
+        <!-- <form name="questionForm"> -->
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="your name" [value]="message.name" (input)="message.name=$event.target.value" required>
+            </div>
+            <div class="form-group">
+                <label for="emailInput">Email address</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="your email" [value]="message.from" (input)="message.from=$event.target.value" required>
+            </div>
+            <div class="form-group">
+                <label for="questionInput">Question</label>
+                <textarea type="text" class="form-control" id="questionInput" placeholder="your question" [value]="message.content" (input)="message.content=$event.target.value" required></textarea>
+            </div>
+            <p class="text-warning" *ngIf="processing">
+              Sending email...
+            </p>
+            <button type="button" class="btn btn-outline-success btn-outline pull-xs-right" (click)="send()">Submit</button>
+        <!-- </form> -->
+    </div>
+  </article>
+  <toast [toast]="toast"></toast>
+</section>
