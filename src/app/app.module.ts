@@ -7,15 +7,11 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { TrimblestreatsRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { firebaseCredentials } from './credentials';
 
 
 import { AngularFireModule } from 'angularfire2';
-export const firebaseConfig = {
-    apiKey: "AIzaSyAfCjnNMucQ4jskblhB_qed6Wo_1pCkoDw",
-    authDomain: "store-72082.firebaseapp.com",
-    databaseURL: "https://store-72082.firebaseio.com",
-    storageBucket: "store-72082.appspot.com",
-};
+export const firebaseConfig = firebaseCredentials;
 @NgModule({
   declarations: [
     AppComponent, Home, Store, About, Checkout, Item, ShippingInfo, OrderRequests, Contact, Faqs, Shipping, Payment, Toast

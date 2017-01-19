@@ -20,7 +20,7 @@
             <p class="text-warning" *ngIf="processing">
               Sending email...
             </p>
-            <button type="button" class="btn btn-outline-success btn-outline pull-xs-right" (click)="send()">Submit</button>
+            <button type="button" class="btn btn-outline-success btn-outline pull-xs-right" (click)="send()" [disabled]="processing">Submit</button>
         <!-- </form> -->
     </div>
   </article>

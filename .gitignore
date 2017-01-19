@@ -4,6 +4,9 @@
 /dist
 /tmp
 
+# private data
+/src/app/credentials.ts
+
 # dependencies
 /node_modules
 /bower_components
